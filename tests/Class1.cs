@@ -10,7 +10,7 @@ namespace fc.test.project
     public class UnitTest1
     {
         [Fact]
-        public void TestMethod2(){
+        public void TestMethod1(){
             Assert.True(1<2);
         }
 
