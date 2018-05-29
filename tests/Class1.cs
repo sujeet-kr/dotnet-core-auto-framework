@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Threading;
-using NUnit.Framework;
+using Xunit;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 
 namespace fc.test.project
 {
-    [TestFixture]
     public class UnitTest1
     {
-        [Test]
+        [Fact]
         public void TestMethod1(){
             DesiredCapabilities capability = new DesiredCapabilities();
             capability.SetCapability("browserName", "chrome");
@@ -21,7 +20,20 @@ namespace fc.test.project
             _driver.Navigate().GoToUrl("http://www.google.com");
             IWebElement element = _driver.FindElement(By.Name("q"));
             element.SendKeys("Sujeet");
-            //Thread.Sleep(10000);                      
+            //Thread.Sleep(10000);    
+            Assert.True(1 < 2);
+        }
+
+
+        [Fact]
+        public void TestMethod2(){
+            Assert.Equal("1", "2");
+        }
+
+        [Fact]
+        public void TestMethod3()
+        {
+            Assert.True(1==1);
         }
         
     }
